@@ -1,8 +1,6 @@
 buton{
-    
     display: flex;
-    justify-content: center;
-    
+    justify-content: center; 
 }
 
 h1 {
