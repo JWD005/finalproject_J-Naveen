@@ -3,12 +3,7 @@ buton{
     justify-content: center; 
 }
 
-h1 {
-    text-align: center;
-    padding-top: 15px;
-}
-
-h5 {
+h1, h5 {
     text-align: center;
     padding-top: 15px;
 }
