@@ -2,7 +2,7 @@
 .card {
     display: flex;
 }
-=======
+
 buton{
     display: flex;
     justify-content: center; 
@@ -10,9 +10,15 @@ buton{
 
 h1 {
     text-align: center;
+    padding-top: 15px;
 }
 
 h5 {
     text-align: center;
+
 }
->>>>>>> 65ac335e9e127413dcc3a769f75957d8e554af33
+
+=======
+    padding-top: 15px;
+}
+>>>>>>> 5c217347c631c321bf98a0a357b5d9e3bda9f0cb
