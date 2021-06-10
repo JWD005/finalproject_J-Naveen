@@ -1,12 +1,11 @@
-/*body {
-    height: fit-content;
+body {
+    height: 100vh;
 }
-*/
 
-buton{
+/*button{
     display: flex;
     justify-content: center; 
-}
+}*/
 
 h1, h5 {
     text-align: center;
