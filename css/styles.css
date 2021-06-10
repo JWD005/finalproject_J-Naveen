@@ -2,18 +2,21 @@ body {
     height: 100vh;
 }
 
-/*button{
+/*{
     display: flex;
     justify-content: center; 
 }*/
 
 h1, h5 {
     text-align: center;
-    padding-top: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .container {
-    margin-top: 10px;
+    margin: auto;
+    width:auto;
+    padding: 5px;
 }
 
 .card {
@@ -25,3 +28,4 @@ h1, h5 {
     margin-bottom: 20px;
     background-color: rgb(121, 150, 204);
 }
+
