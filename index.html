@@ -17,72 +17,123 @@
 
 <!-- Button trigger modal -->
 <h1>Task Planner</h1>
-<div class="d-grid gap-2 col-6 mx-auto">
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-Enter New Task
-</button>
-</div>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Task Planner</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+<nav class="addCardSection">
+      <div class="title">
+        <i class="fas fa-hand-spock"></i>
+        <span>Add your card</u></span>
       </div>
-      <div class="modal-body">
-
-
-        <!--task name-->
-        <div class="form-group">
-          <label for="recipient-name" class="col-form-label">Enter Task Name:</label>
-          <input type="text" class="form-control" id="recipient-name">
-        </div>
-        <!--task name end-->
-
-        <!--a-->
-        <div class="form-group">
-          <label for="exampleFormControlTextarea1">Task Description:</label>
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-        </div>
-        <!--a-end-->
-
-        <!--b-->
-        <div class="form-group">
-          <label for="recipient-name" class="col-form-label">Task Assigned to:</label>
-          <input type="text" class="form-control" id="recipient-name">
-        </div>
-        <!--b-end-->
-
-        <!--c-->
-        <label for="status">Status:</label><!--added code-->
-        <select class="custom-select">
-          <option selected>Open this select menu</option>
-          <option value="1">To Do</option>
-          <option value="2">In Progress</option>
-          <option value="3">Review</option>
-          <option value="4">Done</option>
-        </select>
-        <!--c-end-->
-
-        <!--d-->
-        <label for="start">Due Date:</label>
-        <input type="date" id="start" name="trip-start"
-        value="2018-07-22" min="2021-01-01" max="2050-12-31">
-        <!--d-end-->
-        
+      <div class="addBtn">
+        <button
+          type="button"
+          class="btn btn-primary addCard"
+          data-bs-toggle="modal"
+          data-bs-target="#modal"
+          id="addCardForm"
+        >
+          Add a Task
+        </button>
       </div>
-      <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save Task</button>
-          <button type="button" class="btn btn-primary">Delete</button>
+    </nav>
+    <!-- End nav section here -->
+
+    <!-- Start the add-card form -->
+    <div
+      class="modal fade"
+      id="modal"
+      tabindex="-1"
+      aria-labelledby="addCardForm"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2>Add a Task</h2>
+            <button
+              type="button"
+              id="closeBtn"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <!-- main content of the form -->
+
+          <div class="container">
+            <!-- Task -->
+            <form>
+              <!-- Task -->
+              <div class="mb-2">
+                <label for="taskName" class="form-label">Task</label>
+                <input
+                  type="form-control"
+                  class="form-control"
+                  id="taskName"
+                  required
+                />
+              </div>
+
+              <!-- Task Description -->
+              <div class="mb-2">
+                <label for="description" class="form-label"
+                  >Task Description</label
+                >
+                <textarea
+                  maxlength="280"
+                  class="form-control"
+                  id="description"
+                  rows="3"
+                  placeholder="Write a short and sweet description for the task."
+                ></textarea>
+              </div>
+
+              <!-- Calendar -->
+              <div class="mb-2 dateDiv">
+                <label for="dueDate" class="form-label">Due Date</label>
+                <input type="date" class="form-control" id="dueDate" required />
+              </div>
+
+              <!-- Person Assigned -->
+              <div class="mb-2">
+                <label for="assignedPPL" class="form-label">Name</label>
+                <input
+                  type="form-control"
+                  class="form-control"
+                  id="assignedPPL"
+                  placeholder="Task to be assigned to..."
+                  required
+                />
+              </div>
+
+              <!-- Status Field -->
+              <div class="mb-4">
+                <label for="status" class="form-label" id="statusLabel"
+                  >Status</label
+                >
+                <select
+                  class="form-select"
+                  id="status"
+                  aria-label="Default select example"
+                >
+                  <option value="to-start" selected>To Start</option>
+                  <option value="in-progress">In Progress</option>
+                  <option value="in-review">In Review</option>
+                  <option value="complete">Completed</option>
+                </select>
+              </div>
+
+              <!-- Button -->
+              <button id="saveBtn" class="btn" type="button">CREATE</button>
+              <div class="additionalBtns">
+                <button class="resetBtn" id="resetBtn">reset</button>
+                <button class="deleteBtn" id="deleteBtn">delete</button>
+              </div>
+              <button id="doneBtn" class="doneBtn">DONE</button>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-
-<!--Modal End-->
+    <!-- End show add-card form -->
 
 <!--grid begins-->
 <!--<div class="container">-->
