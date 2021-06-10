@@ -1,3 +1,8 @@
+/*body {
+    height: fit-content;
+}
+*/
+
 buton{
     display: flex;
     justify-content: center; 
@@ -10,4 +15,9 @@ h1, h5 {
 
 .container {
     margin-top: 10px;
+}
+
+.card {
+    height: 22rem;
+    width: 18rem;
 }
