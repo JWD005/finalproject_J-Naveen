@@ -22,3 +22,7 @@ h1, h5 {
     width: 18rem;
 }
 
+.btn {
+    margin-bottom: 20px;
+    background-color: rgb(121, 150, 204);
+}
