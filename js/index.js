@@ -101,7 +101,7 @@ function toggleToStartColOpen() {
 function toggleToStartColOff() {
   if (window.innerWidth > 1500) {
     colToStart.style.width = "8rem";
-    colToStart.style.height = "100%";
+    colToStart.style.height = "85vh";
     colToStart.style.backgroundColor = "rgb(255, 239, 227)";
   } else {
     colToStart.style.width = "95vw";
