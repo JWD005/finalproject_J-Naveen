@@ -53,7 +53,6 @@
             ></button>
           </div>
           <!-- main content of the form -->
-
           <div class="container">
             <!-- Task -->
             <form>
@@ -67,7 +66,6 @@
                   required
                 />
               </div>
-
               <!-- Task Description -->
               <div class="mb-2">
                 <label for="description" class="form-label"
@@ -81,13 +79,11 @@
                   placeholder="Write a short and sweet description for the task."
                 ></textarea>
               </div>
-
               <!-- Calendar -->
               <div class="mb-2 dateDiv">
                 <label for="dueDate" class="form-label">Due Date</label>
                 <input type="date" class="form-control" id="dueDate" required />
               </div>
-
               <!-- Person Assigned -->
               <div class="mb-2">
                 <label for="assignedPPL" class="form-label">Name</label>
@@ -99,7 +95,6 @@
                   required
                 />
               </div>
-
               <!-- Status Field -->
               <div class="mb-4">
                 <label for="status" class="form-label" id="statusLabel"
@@ -116,17 +111,10 @@
                   <option value="complete">Completed</option>
                 </select>
               </div>
-
               <!-- Button -->
               <button id="createBtn" class="btn" type="button">
                 CREATE TASK
               </button>
-
-              <!--<div class="additionalBtns">
-                <button class="resetBtn" id="resetBtn">reset</button>
-                <button class="deleteBtn" id="deleteBtn">delete</button>
-              </div>
-              <button id="doneBtn" class="doneBtn">DONE</button>-->
             </form>
           </div>
         </div>
@@ -203,6 +191,7 @@
       integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
       crossorigin="anonymous"
     ></script>
-    <script src="index.js"></script>
+    <script src="./js/taskManager.js"></script>
+    <script src="./js/index.js"></script>
   </body>
 </html>
