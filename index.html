@@ -52,38 +52,36 @@
             ></button>
           </div>
           <!-- main content of the form -->
-
           <div class="container">
-            <!-- Task -->
-            <form>
+            <form name = "myForm">
               <!-- Task Name-->
               <div class="mb-2">
                 <label for="taskName" class="form-label">Task</label>
-                <input type="form-control" class="form-control taskName" id="taskName" required/><!--class = taskName-->
+                <input type="form-control" class="form-control" id="taskName" required/>
               </div>
 
               <!-- Task Description -->
               <div class="mb-2">
                 <label for="description" class="form-label">Task Description</label>
-                <textarea maxlength="280"class="form-control taskDescription"id="description" rows="3"placeholder="Write a short and sweet description for the task."></textarea><!--class = TaskDescription-->
+                <textarea maxlength="280"class="form-control" id="description" rows="3"placeholder="Write a short and sweet description for the task."></textarea>
               </div>
 
               <!-- Due Date -->
               <div class="mb-2 dateDiv">
                 <label for="dueDate" class="form-label">Due Date</label>
-                <input type="date" class="form-control dueDate" id="dueDate" required /><!--class= dueDate-->
+                <input type="date" class="form-control" id="dueDate" required />
               </div>
 
               <!-- Person Assigned -->
               <div class="mb-2">
                 <label for="assignedPPL" class="form-label">Name</label>
-                <input type="form-control" class="form-control personAssigned" id="assignedPPL" placeholder="Task to be assigned to..." required/>
-              </div><!--personAssigned-->
+                <input type="form-control" class="form-control" id="assignedPPL" placeholder="Task to be assigned to..." required/>
+              </div>
 
               <!-- Status Field -->
               <div class="mb-4">
                 <label for="status" class="form-label" id="statusLabel">Status</label>
-                <select class="form-select statusField" id="status" aria-label="Default select example"><!--class = statusField-->
+                <select class="form-select" id="status" aria-label="Default select example">
                   <option value="to-start" selected>To Start</option>
                   <option value="in-progress">In Progress</option>
                   <option value="in-review">In Review</option>
