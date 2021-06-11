@@ -105,19 +105,18 @@ header .addCard:focus {
 /* modal section ends here */
 
 main {
-  height: 80vh;
+  height: 85vh;
 }
 
 footer {
   text-align: center;
 }
+footer p {
+  margin: 0;
+  height: 10vh;
+}
 
 .card {
   height: 22rem;
   width: 18rem;
-}
-
-.btn {
-  margin-bottom: 20px;
-  background-color: rgb(121, 150, 204);
 }
