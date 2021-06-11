@@ -85,10 +85,17 @@ const colInProgress = document.getElementById("colInProgress");
 const colInReview = document.getElementById("colInReview");
 const colCompleted = document.getElementById("colCompleted");
 
+// Continuously detect browser width
+var winWidth = $(window).width();
+$(window).resize(function () {
+  winWidth = $(window).width();
+  console.log(winWidth);
+});
+
 function toggleToStartColOpen() {
-  if (window.innerWidth > 1500) {
+  if (winWidth > 1500) {
     colToStart.style.width = "Calc(100% - 22rem)";
-    colToStart.style.height = "100%";
+    colToStart.style.height = "85vh";
     colToStart.style.backgroundColor = "rgb(255, 229, 209)";
   } else {
     colToStart.style.width = "95vw";
@@ -99,7 +106,7 @@ function toggleToStartColOpen() {
   document.querySelector("#colToStart > div").style.display = "flex";
 }
 function toggleToStartColOff() {
-  if (window.innerWidth > 1500) {
+  if (winWidth > 1500) {
     colToStart.style.width = "8rem";
     colToStart.style.height = "85vh";
     colToStart.style.backgroundColor = "rgb(255, 239, 227)";
