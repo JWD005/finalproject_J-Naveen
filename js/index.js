@@ -1,3 +1,5 @@
+// Task 5 initialize New Task Manager- code to be console.log()
+const taskManager = new TaskManager();//to be set
 /*
 Function validFormFieldInput(data) 
 
