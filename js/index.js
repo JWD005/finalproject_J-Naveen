@@ -1,5 +1,5 @@
 // Task 5 initialize New Task Manager- code to be console.log()
-const taskManager = new TaskManager();//to be set
+// const taskManager = new TaskManager();//to be set
 /*
 Function validFormFieldInput(data) 
 
@@ -80,4 +80,37 @@ if (validationFail > 0) {
 }
 });
 */
+const colToStart = document.getElementById("colToStart");
+const colInProgress = document.getElementById("colInProgress");
+const colInReview = document.getElementById("colInReview");
+const colCompleted = document.getElementById("colCompleted");
 
+function toggleToStartColOpen() {
+  if (window.innerWidth > 1500) {
+    colToStart.style.width = "Calc(100% - 22rem)";
+    colToStart.style.height = "100%";
+    colToStart.style.backgroundColor = "rgb(255, 229, 209)";
+  } else {
+    colToStart.style.width = "95vw";
+    colToStart.style.height = " Calc(100% - 10rem)";
+    colToStart.style.backgroundColor = "rgb(255, 229, 209)";
+  }
+}
+function toggleToStartColOff() {
+  if (window.innerWidth > 1500) {
+    colToStart.style.width = "8rem";
+    colToStart.style.height = "100%";
+    colToStart.style.backgroundColor = "rgb(255, 239, 227)";
+  } else {
+    colToStart.style.width = "95vw";
+    colToStart.style.height = " 2rem";
+    colToStart.style.backgroundColor = "rgb(255, 239, 227)";
+  }
+}
+
+colInProgress.addEventListener("mouseenter", toggleToStartColOff);
+colInProgress.addEventListener("mouseleave", toggleToStartColOpen);
+colInReview.addEventListener("mouseenter", toggleToStartColOff);
+colInReview.addEventListener("mouseleave", toggleToStartColOpen);
+colCompleted.addEventListener("mouseenter", toggleToStartColOff);
+colCompleted.addEventListener("mouseleave", toggleToStartColOpen);
