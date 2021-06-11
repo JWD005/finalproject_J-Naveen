@@ -1,15 +1,24 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 .card {
     display: flex;
 }
 
 buton{
-    display: flex;
-    justify-content: center; 
+=======
+body {
+    height: 100vh;
 }
 
-h1 {
+/*{
+>>>>>>> f37cfc80c7dfeb463f2e8d8bc35b628bd5528599
+    display: flex;
+    justify-content: center; 
+}*/
+
+h1, h5 {
     text-align: center;
+<<<<<<< HEAD
     padding-top: 15px;
 }
 
@@ -22,3 +31,25 @@ h5 {
     padding-top: 15px;
 }
 >>>>>>> 5c217347c631c321bf98a0a357b5d9e3bda9f0cb
+=======
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.container {
+    margin: auto;
+    width:auto;
+    padding: 5px;
+}
+
+.card {
+    height: 22rem;
+    width: 18rem;
+}
+
+.btn {
+    margin-bottom: 20px;
+    background-color: rgb(121, 150, 204);
+}
+
+>>>>>>> f37cfc80c7dfeb463f2e8d8bc35b628bd5528599
