@@ -1,3 +1,4 @@
+/*
 Function validFormFieldInput(data) 
 
 const form = document.querySelector("#new-task-form");
@@ -76,5 +77,5 @@ if (validationFail > 0) {
     return;
 }
 });
-
+*/
 
