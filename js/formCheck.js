@@ -27,31 +27,31 @@ createBtn.addEventListener("click", () => {
   const currentDateYY = new Date().toISOString().slice(0, 4);
   const currentDateMM = new Date().toISOString().slice(5, 7);
   const currentDateDD = new Date().toISOString().slice(8, 10);
-  if (dueDateYY > currentDateYY) {
-    dueDateValid.style.display = "none";
+  if (dueDate.value && dueDateYY && dueDateMM && dueDateDD) {
     dueDateRequired.style.display = "none";
-  } else if (dueDateYY < currentDateYY) {
-    dueDateValid.style.display = "inline";
-    dueDateRequired.style.display = "inline";
-  } else {
-    if (dueDateMM > currentDateMM) {
+    if (dueDateYY > currentDateYY) {
       dueDateValid.style.display = "none";
-      dueDateRequired.style.display = "none";
-    } else if (dueDateMM < currentDateMM) {
+    } else if (dueDateYY < currentDateYY) {
       dueDateValid.style.display = "inline";
-      dueDateRequired.style.display = "inline";
     } else {
-      if (dueDateDD >= currentDateDD) {
+      if (dueDateMM > currentDateMM) {
         dueDateValid.style.display = "none";
-        dueDateRequired.style.display = "none";
-      } else {
+      } else if (dueDateMM < currentDateMM) {
         dueDateValid.style.display = "inline";
-        dueDateRequired.style.display = "inline";
+      } else {
+        if (dueDateDD >= currentDateDD) {
+          dueDateValid.style.display = "none";
+        } else {
+          dueDateValid.style.display = "inline";
+        }
       }
     }
+  } else {
+    dueDateRequired.style.display = "inline";
   }
 
   //Assigned people validation check
+
   const assignedTo = document.getElementById("assignedTo");
   const assignedToValid = document.getElementById("assignedToValid");
   const assignedToRequired = document.getElementById("assignedToRequired");
