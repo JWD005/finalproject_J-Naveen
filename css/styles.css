@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
 }
-
 body {
   height: 100vh;
   max-height: 100vh;
@@ -10,11 +9,15 @@ body {
   box-sizing: border-box;
   overflow: hidden;
 }
+label {
+  display: flex;
+  justify-content: space-between;
+}
+i {
+  color: red;
+  display: none;
+}
 
-/*{
-    display: flex;
-    justify-content: center; 
-}*/
 header {
   height: 10vh;
   display: flex;
@@ -217,7 +220,7 @@ footer p {
 /* footer section ends here */
 
 /* media section */
-@media screen and (max-width: 1500px) {
+@media screen and (max-width: 1200px) {
   .mainContainer {
     flex-direction: column;
   }

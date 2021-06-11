@@ -58,7 +58,13 @@
             <form>
               <!-- Task -->
               <div class="mb-2">
-                <label for="taskName" class="form-label">Task</label>
+                <label for="taskName" class="form-label">
+                  Task
+                  <div>
+                    <i id="taskNameValid"> ( At least 5 characters ) </i>
+                    <i id="taskNameRequired">* required</i>
+                  </div>
+                </label>
                 <input
                   type="form-control"
                   class="form-control"
@@ -68,9 +74,9 @@
               </div>
               <!-- Task Description -->
               <div class="mb-2">
-                <label for="description" class="form-label"
-                  >Task Description</label
-                >
+                <label for="description" class="form-label">
+                  Task Description
+                </label>
                 <textarea
                   maxlength="280"
                   class="form-control"
@@ -81,12 +87,24 @@
               </div>
               <!-- Calendar -->
               <div class="mb-2 dateDiv">
-                <label for="dueDate" class="form-label">Due Date</label>
+                <label for="dueDate" class="form-label">
+                  Due Date
+                  <div>
+                    <i id="dueDateValid"> ( start from today ) </i>
+                    <i id="dueDateRequired">* required </i>
+                  </div>
+                </label>
                 <input type="date" class="form-control" id="dueDate" required />
               </div>
               <!-- Person Assigned -->
               <div class="mb-2">
-                <label for="assignedPPL" class="form-label">Name</label>
+                <label for="assignedPPL" class="form-label">
+                  Name
+                  <div>
+                    <i id="assignedToValid"> ( At least 5 characters ) </i>
+                    <i id="assignedToRequired">* required</i>
+                  </div>
+                </label>
                 <input
                   type="form-control"
                   class="form-control"
@@ -97,9 +115,9 @@
               </div>
               <!-- Status Field -->
               <div class="mb-4">
-                <label for="status" class="form-label" id="statusLabel"
-                  >Status</label
-                >
+                <label for="status" class="form-label" id="statusLabel">
+                  Status
+                </label>
                 <select
                   class="form-select"
                   id="status"
@@ -108,7 +126,7 @@
                   <option value="toStart" selected>To Start</option>
                   <option value="inProgress">In Progress</option>
                   <option value="inReview">In Review</option>
-                  <option value="complete">Completed</option>
+                  <option value="completed">Completed</option>
                 </select>
               </div>
               <!-- Button -->
@@ -127,251 +145,37 @@
         <div class="mainCol" id="colToStart">
           <p style="color: rgb(184, 255, 169)">To Start</p>
           <div class="cardContainer" id="toStartContainer">
+            <!-- Card Sample -->
             <div class="card">
               <div class="cardHeader">
-                <p id="taskName">Task 1</p>
-                <p id="taskDueDate">12/06/2021</p>
+                <p id="taskName">Task Name</p>
+                <p id="taskDueDate">Due Date</p>
               </div>
-              <p id="taskDescription">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
-                facilis hic omnis! Ullam magni inventore recusandae distinctio,
-                nemo voluptate qui suscipit nesciunt rerum amet atque corporis,
-                eius numquam nisi explicabo eius numquam ni
-              </p>
-              <h6 class="card-subtitle mb-2 text-muted">Assigned to:</h6>
+              <p id="taskDescription">Description</p>
+              <h6 class="card-subtitle mb-2 text-muted" id="assignedTo">
+                Assigned to: XXX
+              </h6>
               <button type="button" class="btn btn-danger">Delete</button>
             </div>
-            <div class="card">
-              <div class="cardHeader">
-                <p id="taskName">Task 1</p>
-                <p id="taskDueDate">12/06/2021</p>
-              </div>
-              <p id="taskDescription">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
-                facilis hic omnis! Ullam magni inventore recusandae distinctio,
-                nemo voluptate qui suscipit nesciunt rerum amet atque corporis,
-                eius numquam nisi explicabo eius numquam nisi explicabo. Lorem
-                ipsum dolor sit amet consectetur adipisicing elit. Illum facilis
-                hic omnis! Ullam magni inventore recusandae distinctio, nemo
-                voluptate qui suscipit nesciunt rerum amet atque corporis, eius
-                numquam nisi explicabo eius numquam nisi explicabo.
-              </p>
-              <h6 class="card-subtitle mb-2 text-muted">Assigned to:</h6>
-              <button type="button" class="btn btn-danger">Delete</button>
-            </div>
-            <div class="card">
-              <div class="cardHeader">
-                <p id="taskName">Task 1</p>
-                <p id="taskDueDate">12/06/2021</p>
-              </div>
-              <p id="taskDescription">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
-                facilis hic omnis! Ullam magni inventore recusandae distinctio,
-                nemo voluptate qui suscipit nesciunt rerum amet atque corporis,
-                eius numquam nisi explicabo eius numquam nisi explicabo. Lorem
-                ipsum dolor sit amet consectetur adipisicing elit. Illum facilis
-                hic omnis! Ullam magni inventore recusandae distinctio, nemo
-                voluptate qui suscipit nesciunt rerum amet atque corporis, eius
-                numquam nisi explicabo eius numquam nisi explicabo.
-              </p>
-              <h6 class="card-subtitle mb-2 text-muted">Assigned to:</h6>
-              <button type="button" class="btn btn-danger">Delete</button>
-            </div>
-            <div class="card">
-              <div class="cardHeader">
-                <p id="taskName">Task 1</p>
-                <p id="taskDueDate">12/06/2021</p>
-              </div>
-              <p id="taskDescription">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
-                facilis hic omnis! Ullam magni inventore recusandae distinctio,
-                nemo voluptate qui suscipit nesciunt rerum amet atque corporis,
-                eius numquam nisi explicabo eius numquam nisi explicabo. Lorem
-                ipsum dolor sit amet consectetur adipisicing elit. Illum facilis
-                hic omnis! Ullam magni inventore recusandae distinctio, nemo
-                voluptate qui suscipit nesciunt rerum amet atque corporis, eius
-                numquam nisi explicabo eius numquam nisi explicabo.
-              </p>
-              <h6 class="card-subtitle mb-2 text-muted">Assigned to:</h6>
-              <button type="button" class="btn btn-danger">Delete</button>
-            </div>
-            <div class="card">
-              <div class="cardHeader">
-                <p id="taskName">Task 1</p>
-                <p id="taskDueDate">12/06/2021</p>
-              </div>
-              <p id="taskDescription">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
-                facilis hic omnis! Ullam magni inventore recusandae distinctio,
-                nemo voluptate qui suscipit nesciunt rerum amet atque corporis,
-                eius numquam nisi explicabo eius numquam nisi explicabo. Lorem
-                ipsum dolor sit amet consectetur adipisicing elit. Illum facilis
-                hic omnis! Ullam magni inventore recusandae distinctio, nemo
-                voluptate qui suscipit nesciunt rerum amet atque corporis, eius
-                numquam nisi explicabo eius numquam nisi explicabo.
-              </p>
-              <h6 class="card-subtitle mb-2 text-muted">Assigned to:</h6>
-              <button type="button" class="btn btn-danger">Delete</button>
-            </div>
+            <!-- Start Card Goes Here -->
           </div>
         </div>
         <div class="mainCol" id="colInProgress">
           <p style="color: rgb(153, 255, 132)">In Progress</p>
           <div class="cardContainer" id="inProgressContainer">
-            <div class="card">
-              <div class="cardHeader">
-                <p id="taskName">Task 1</p>
-                <p id="taskDueDate">12/06/2021</p>
-              </div>
-              <p id="taskDescription">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
-                facilis hic omnis! Ullam magni inventore recusandae distinctio,
-                nemo voluptate qui suscipit nesciunt rerum amet atque corporis,
-                eius numquam nisi explicabo eius numquam nisi explicabo. Lorem
-                ipsum dolor sit amet consectetur adipisicing elit. Illum facilis
-                hic omnis! Ullam magni inventore recusandae distinctio, nemo
-                voluptate qui suscipit nesciunt rerum amet atque corporis, eius
-                numquam nisi explicabo eius numquam nisi explicabo.
-              </p>
-              <h6 class="card-subtitle mb-2 text-muted">Assigned to:</h6>
-              <button type="button" class="btn btn-danger">Delete</button>
-            </div>
-            <div class="card">
-              <div class="cardHeader">
-                <p id="taskName">Task 1</p>
-                <p id="taskDueDate">12/06/2021</p>
-              </div>
-              <p id="taskDescription">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
-                facilis hic omnis! Ullam magni inventore recusandae distinctio,
-                nemo voluptate qui suscipit nesciunt rerum amet atque corporis,
-                eius numquam nisi explicabo eius numquam nisi explicabo. Lorem
-                ipsum dolor sit amet consectetur adipisicing elit. Illum facilis
-                hic omnis! Ullam magni inventore recusandae distinctio, nemo
-                voluptate qui suscipit nesciunt rerum amet atque corporis, eius
-                numquam nisi explicabo eius numquam nisi explicabo.
-              </p>
-              <h6 class="card-subtitle mb-2 text-muted">Assigned to:</h6>
-              <button type="button" class="btn btn-danger">Delete</button>
-            </div>
-            <div class="card">
-              <div class="cardHeader">
-                <p id="taskName">Task 1</p>
-                <p id="taskDueDate">12/06/2021</p>
-              </div>
-              <p id="taskDescription">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
-                facilis hic omnis! Ullam magni inventore recusandae distinctio,
-                nemo voluptate qui suscipit nesciunt rerum amet atque corporis,
-                eius numquam nisi explicabo eius numquam nisi explicabo. Lorem
-                ipsum dolor sit amet consectetur adipisicing elit. Illum facilis
-                hic omnis! Ullam magni inventore recusandae distinctio, nemo
-                voluptate qui suscipit nesciunt rerum amet atque corporis, eius
-                numquam nisi explicabo eius numquam nisi explicabo.
-              </p>
-              <h6 class="card-subtitle mb-2 text-muted">Assigned to:</h6>
-              <button type="button" class="btn btn-danger">Delete</button>
-            </div>
-            <div class="card">
-              <div class="cardHeader">
-                <p id="taskName">Task 1</p>
-                <p id="taskDueDate">12/06/2021</p>
-              </div>
-              <p id="taskDescription">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
-                facilis hic omnis! Ullam magni inventore recusandae distinctio,
-                nemo voluptate qui suscipit nesciunt rerum amet atque corporis,
-                eius numquam nisi explicabo eius numquam nisi explicabo. Lorem
-                ipsum dolor sit amet consectetur adipisicing elit. Illum facilis
-                hic omnis! Ullam magni inventore recusandae distinctio, nemo
-                voluptate qui suscipit nesciunt rerum amet atque corporis, eius
-                numquam nisi explicabo eius numquam nisi explicabo.
-              </p>
-              <h6 class="card-subtitle mb-2 text-muted">Assigned to:</h6>
-              <button type="button" class="btn btn-danger">Delete</button>
-            </div>
+            <!-- Progressing Cards Goes Here -->
           </div>
         </div>
         <div class="mainCol" id="colInReview">
           <p style="color: rgb(122, 255, 95)">In Review</p>
           <div class="cardContainer" id="inReviewContainer">
-            <div class="card">
-              <div class="cardHeader">
-                <p id="taskName">Task 1</p>
-                <p id="taskDueDate">12/06/2021</p>
-              </div>
-              <p id="taskDescription">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
-                facilis hic omnis! Ullam magni inventore recusandae distinctio,
-                nemo voluptate qui suscipit nesciunt rerum amet atque corporis,
-                eius numquam nisi explicabo eius numquam nisi explicabo. Lorem
-                ipsum dolor sit amet consectetur adipisicing elit. Illum facilis
-                hic omnis! Ullam magni inventore recusandae distinctio, nemo
-                voluptate qui suscipit nesciunt rerum amet atque corporis, eius
-                numquam nisi explicabo eius numquam nisi explicabo.
-              </p>
-              <h6 class="card-subtitle mb-2 text-muted">Assigned to:</h6>
-              <button type="button" class="btn btn-danger">Delete</button>
-            </div>
-            <div class="card">
-              <div class="cardHeader">
-                <p id="taskName">Task 1</p>
-                <p id="taskDueDate">12/06/2021</p>
-              </div>
-              <p id="taskDescription">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
-                facilis hic omnis! Ullam magni inventore recusandae distinctio,
-                nemo voluptate qui suscipit nesciunt rerum amet atque corporis,
-                eius numquam nisi explicabo eius numquam nisi explicabo. Lorem
-                ipsum dolor sit amet consectetur adipisicing elit. Illum facilis
-                hic omnis! Ullam magni inventore recusandae distinctio, nemo
-                voluptate qui suscipit nesciunt rerum amet atque corporis, eius
-                numquam nisi explicabo eius numquam nisi explicabo.
-              </p>
-              <h6 class="card-subtitle mb-2 text-muted">Assigned to:</h6>
-              <button type="button" class="btn btn-danger">Delete</button>
-            </div>
-            <div class="card">
-              <div class="cardHeader">
-                <p id="taskName">Task 1</p>
-                <p id="taskDueDate">12/06/2021</p>
-              </div>
-              <p id="taskDescription">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
-                facilis hic omnis! Ullam magni inventore recusandae distinctio,
-                nemo voluptate qui suscipit nesciunt rerum amet atque corporis,
-                eius numquam nisi explicabo eius numquam nisi explicabo. Lorem
-                ipsum dolor sit amet consectetur adipisicing elit. Illum facilis
-                hic omnis! Ullam magni inventore recusandae distinctio, nemo
-                voluptate qui suscipit nesciunt rerum amet atque corporis, eius
-                numquam nisi explicabo eius numquam nisi explicabo.
-              </p>
-              <h6 class="card-subtitle mb-2 text-muted">Assigned to:</h6>
-              <button type="button" class="btn btn-danger">Delete</button>
-            </div>
+            <!-- Review Cards Goes Here -->
           </div>
         </div>
         <div class="mainCol" id="colCompleted">
           <p style="color: rgb(86, 255, 52)">Completed</p>
           <div class="cardContainer" id="completedContainer">
-            <div class="card">
-              <div class="cardHeader">
-                <p id="taskName">Task 1</p>
-                <p id="taskDueDate">12/06/2021</p>
-              </div>
-              <p id="taskDescription">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
-                facilis hic omnis! Ullam magni inventore recusandae distinctio,
-                nemo voluptate qui suscipit nesciunt rerum amet atque corporis,
-                eius numquam nisi explicabo eius numquam nisi explicabo. Lorem
-                ipsum dolor sit amet consectetur adipisicing elit. Illum facilis
-                hic omnis! Ullam magni inventore recusandae distinctio, nemo
-                voluptate qui suscipit nesciunt rerum amet atque corporis, eius
-                numquam nisi explicabo eius numquam nisi explicabo.
-              </p>
-              <h6 class="card-subtitle mb-2 text-muted">Assigned to:</h6>
-              <button type="button" class="btn btn-danger">Delete</button>
-            </div>
+            <!-- Completed Cards Goes Here -->
           </div>
         </div>
       </div>
@@ -387,7 +191,8 @@
       crossorigin="anonymous"
     ></script>
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="./js/formCheck.js"></script>
     <script src="./js/taskManager.js"></script>
-    <script src="./js/index.js"></script>
+    <script src="./js/columnControl.js"></script>
   </body>
 </html>
