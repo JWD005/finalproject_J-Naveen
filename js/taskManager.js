@@ -1,4 +1,4 @@
-class ClassName {
+class TaskManager {
     constructor() { // parameters to be set
         this.task = [];// initialize this. to an empty array
     }
