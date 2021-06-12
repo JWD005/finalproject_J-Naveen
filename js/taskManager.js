@@ -21,6 +21,8 @@ const completedArr = JSON.parse(localStorage.getItem("completedArr"))
   : [];
 */
 
+
+
 /*
 Task 5: initialize taskManager class
 Step 2: The TaskManager Class
@@ -37,12 +39,14 @@ Step 1:
 5.push a new task into the this.tasks array, with the correct properties of the task, using the values passed in as parameters as well as the new this.currentId
 */
 
+
+//codes for task 5 & 6
 class taskManager { //<--Task 5- Create a TaskManager class in js/taskManager.js
   constructor(currentId = 0) { // <--Task 6- 1.In the TaskManager's constructor, accept a currentId parameter, with a default value of 0.
     this.task = []; // <-- Task 5- Within the constructor of the TaskManager class, initialize a this.tasks property on the class equal to an empty array.
     this.currentId = currentId; // <--Task 6- 2.Assign the currentId to a new property on the class, this.currentId.
   }
-  addTask(taskName, decription, assignedTo, dueDate, status){ //<--Task 6- Create a method on the class, addTask. 
+  addTask(taskName, description, assignedTo, dueDate, status){ //<--Task 6- Create a method on the class, addTask. 
     const task = {
       id: this.currentId++, //<--Task 6- Within the addTask method, increment the this.currentId.
       taskName: taskName,
@@ -53,7 +57,6 @@ class taskManager { //<--Task 5- Create a TaskManager class in js/taskManager.js
     };
     this.task.push({task});
   } 
-
 
 
 
