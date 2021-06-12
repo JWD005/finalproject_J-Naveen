@@ -6,6 +6,7 @@
 // in this case, initialize each array by checking if its already existed in our local storage
 // if it is - use the stored array
 // otherwise - set an empty array instead.
+/*
 const toStartArr = JSON.parse(localStorage.getItem("toStartArr"))
   ? JSON.parse(localStorage.getItem("toStartArr"))
   : [];
@@ -18,7 +19,7 @@ const inReviewArr = JSON.parse(localStorage.getItem("inReviewArr"))
 const completedArr = JSON.parse(localStorage.getItem("completedArr"))
   ? JSON.parse(localStorage.getItem("completedArr"))
   : [];
-
+*/
 
 
 
@@ -39,7 +40,7 @@ Step 1:
 */
 
 
-/*
+
 //codes for task 5 & 6
 class taskManager { //<--Task 5- Create a TaskManager class in js/taskManager.js
   constructor(currentId = 0) { // <--Task 6- 1.In the TaskManager's constructor, accept a currentId parameter, with a default value of 0.
@@ -57,11 +58,11 @@ class taskManager { //<--Task 5- Create a TaskManager class in js/taskManager.js
     };
     this.task.push({task});
   } 
-*/
 
 
 
 
+/*
 // initialize taskManager class
 // as the id is highly associated with the status of each card
 // means when a card move from one status into another, the id should be changed based on the new status array.
@@ -113,4 +114,8 @@ class taskManager {
     this._id = newId;
   }
 }
+<<<<<<< HEAD
 //last step- codes to be tested
+=======
+*/
+>>>>>>> 0ecc6fc512c172a2d3d4a5fd31b864429570de7e
