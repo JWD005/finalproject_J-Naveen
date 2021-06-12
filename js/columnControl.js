@@ -7,7 +7,7 @@ Note: Make sure to prevent the default action of the form!
 4. Clear the values from each form input, ready for the next submission.
 */
 
-
+/*
 // Task 6- 1. Make sure a new TaskManager is initialized at the top of the file.
 const taskManager = new taskManager(0);
 // Select the New Task Form
@@ -51,8 +51,8 @@ const colInProgress = document.getElementById("colInProgress");
 const colInReview = document.getElementById("colInReview");
 const colCompleted = document.getElementById("colCompleted");
 // Unable to complete step 2 "In index.js using the eventListener created for the form validation"
+*/
 
-/*
 // Continuously detect browser width (jQuery, imported in html page - line 193)
 var winWidth = $(window).width();
 $(window).resize(function () {
@@ -127,4 +127,4 @@ colCompleted.addEventListener("mouseleave", () => {
   document.querySelector("#colCompleted > p").style.fontSize = "0.5rem";
   document.querySelector("#colCompleted > div").style.display = "none";
 });
-*/
+
