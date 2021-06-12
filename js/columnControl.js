@@ -1,15 +1,18 @@
+// grab elements from html page by id
 const colToStart = document.getElementById("colToStart");
 const colInProgress = document.getElementById("colInProgress");
 const colInReview = document.getElementById("colInReview");
 const colCompleted = document.getElementById("colCompleted");
 
-// Continuously detect browser width
+// Continuously detect browser width (jQuery, imported in html page - line 193)
 var winWidth = $(window).width();
 $(window).resize(function () {
   winWidth = $(window).width();
   toggleToStartColOpen();
 });
 
+// toggle the toStart column as opened (default)
+// based on browser width to determine toStart column's width and height
 function toggleToStartColOpen() {
   if (winWidth > 1200) {
     colToStart.style.width = "Calc(100% - 22rem)";
@@ -23,6 +26,8 @@ function toggleToStartColOpen() {
   document.querySelector("#colToStart > p").style.fontSize = "1.5rem";
   document.querySelector("#colToStart > div").style.display = "flex";
 }
+// toggle the toStart column as closed (other columns opened)
+// based on browser width to determine toStart column's width and height
 function toggleToStartColOff() {
   if (winWidth > 1200) {
     colToStart.style.width = "8rem";
@@ -37,11 +42,15 @@ function toggleToStartColOff() {
   document.querySelector("#colToStart > div").style.display = "none";
 }
 // In Progress Column
+// when mouse enter this column, toggle toStart column as closed
+// resize the associated p tag and change div tag to be display-flex
 colInProgress.addEventListener("mouseenter", toggleToStartColOff);
 colInProgress.addEventListener("mouseenter", () => {
   document.querySelector("#colInProgress > p").style.fontSize = "1.5rem";
   document.querySelector("#colInProgress > div").style.display = "flex";
 });
+// when mouse leave this column, toggle toStart column as open
+// resize the associated p tag and change div tag to be display-none
 colInProgress.addEventListener("mouseleave", toggleToStartColOpen);
 colInProgress.addEventListener("mouseleave", () => {
   document.querySelector("#colInProgress > p").style.fontSize = "0.5rem";
