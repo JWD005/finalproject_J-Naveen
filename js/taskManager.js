@@ -1,4 +1,11 @@
 // initialize or create four arrays to store objects(cards) under different status
+// to store data into Local Storage, use
+// localStorage.setItem("nameOfItem", JSON.stringify(whatShouldBeStored))
+// to get data from Local Storage, use
+// JSON.parse(localStorage.getItem("nameOfItem"))
+// in this case, initialize each array by checking if its already existed in our local storage
+// if it is - use the stored array
+// otherwise - set an empty array instead.
 const toStartArr = JSON.parse(localStorage.getItem("toStartArr"))
   ? JSON.parse(localStorage.getItem("toStartArr"))
   : [];
@@ -13,6 +20,8 @@ const completedArr = JSON.parse(localStorage.getItem("completedArr"))
   : [];
 
 // initialize taskManager class
+// as the id is highly associated with the status of each card
+// means when a card move from one status into another, the id should be changed based on the new status array.
 class taskManager {
   constructor(name, dueDate, description, assignedTo, status) {
     this._name = name;
