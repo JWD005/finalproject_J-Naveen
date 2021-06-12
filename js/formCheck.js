@@ -44,7 +44,7 @@ createBtn.addEventListener("click", () => {
     dueDateRequired.style.display = "none";
     if (dueDateYY > currentDateYY) {
       // if user chose a year that is the following year, for example
-      // means due date is unavailable
+      // means due date is available
       // the dueDate validation text will not show.
       dueDateValid.style.display = "none";
     } else if (dueDateYY < currentDateYY) {
