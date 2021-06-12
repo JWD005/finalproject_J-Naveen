@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
 }
-
 body {
   height: 100vh;
   max-height: 100vh;
@@ -10,21 +9,26 @@ body {
   box-sizing: border-box;
   overflow: hidden;
 }
+label {
+  display: flex;
+  justify-content: space-between;
+}
+i {
+  color: red;
+  display: none;
+}
 
-/*{
-    display: flex;
-    justify-content: center; 
-}*/
 header {
   height: 10vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-header h1 {
+header > h1 {
   margin: 0;
   padding: 0;
   position: fixed;
+  cursor: default;
 }
 header .addCard {
   margin: 0;
@@ -119,13 +123,18 @@ main {
 }
 .mainCol {
   width: 8rem;
-  margin-left: 1rem;
   height: 100%;
+  margin-left: 0.5rem;
   background-color: rgb(255, 239, 227);
   box-shadow: 1px 3px #b3b3b3;
   transition: 0.5s ease-in;
   overflow: auto;
   padding: 1rem 1rem;
+  border: 0.5px solid rgb(255, 223, 199);
+}
+.mainCol:hover {
+  border: 1px solid rgb(255, 201, 160);
+  box-shadow: 2px 5px #888888;
 }
 .mainCol > p {
   text-align: center;
@@ -133,9 +142,22 @@ main {
   font-weight: bold;
   font-style: italic;
   cursor: default;
+  transition: 0.5s;
 }
 .mainCol:first-child > p {
   font-size: 1.5rem;
+}
+.mainCol:not(:first-child) > div {
+  display: none;
+}
+.mainCol:first-child {
+  width: Calc(100% - 22rem);
+  height: 100%;
+  background-color: rgb(255, 229, 209);
+}
+.mainCol:not(:first-child):hover {
+  background-color: rgb(255, 229, 209);
+  width: Calc(100% - 22rem);
 }
 .mainCol > div {
   display: flex;
@@ -144,19 +166,26 @@ main {
   flex-wrap: wrap;
   margin: 2rem auto;
 }
-.mainCol:not(:first-child) > div {
-  display: none;
-}
 .card {
   width: 300px;
   height: 400px;
   padding: 0.5rem;
   border-radius: 10px;
   margin: 1rem;
+  box-shadow: 1px 2px #b3b3b3;
+  transition: 0.5s;
+}
+.card:hover {
+  box-shadow: 2px 5px #888888;
+  margin-top: 0;
 }
 .card > p {
-  max-height: 250px;
+  height: 250px;
   overflow-y: auto;
+  cursor: default;
+}
+.card > h6 {
+  cursor: default;
 }
 .cardHeader {
   margin: 0.5rem;
@@ -168,18 +197,16 @@ main {
 .cardHeader > p:first-child {
   font-weight: bold;
 }
-.mainCol:first-child {
-  width: Calc(100% - 22rem);
-  height: 100%;
-  background-color: rgb(255, 229, 209);
+.cardHeader > p {
+  cursor: default;
 }
-.mainCol:not(:first-child):hover {
-  background-color: rgb(255, 229, 209);
-  width: Calc(100% - 22rem);
+.btn-danger {
+  transition: 0.5s;
+  width: 70%;
+  margin: auto;
 }
-.mainCol:hover {
-  border: 1px solid black;
-  box-shadow: 2px 5px #888888;
+.btn-danger:hover {
+  transform: scale(1.1);
 }
 
 /* footer section starts here */
@@ -188,11 +215,12 @@ footer {
 }
 footer p {
   margin-top: 0.8rem;
+  cursor: default;
 }
 /* footer section ends here */
 
 /* media section */
-@media screen and (max-width: 1500px) {
+@media screen and (max-width: 1200px) {
   .mainContainer {
     flex-direction: column;
   }
