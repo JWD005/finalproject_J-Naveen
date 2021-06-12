@@ -12,6 +12,15 @@ const completedArr = JSON.parse(localStorage.getItem("completedArr"))
   ? JSON.parse(localStorage.getItem("completedArr"))
   : [];
 
+/* 
+// Task 5: initialize taskManager class
+class taskManager {
+  constructor() { // parameters to be set
+    this.task = [];// initialize this. to an empty array
+    }
+*/
+
+
 // initialize taskManager class
 class taskManager {
   constructor(name, dueDate, description, assignedTo, status) {
