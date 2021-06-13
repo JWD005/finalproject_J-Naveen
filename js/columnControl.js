@@ -44,6 +44,17 @@ form.addEventListener("submit", (event) => {
   console.log("Task Assigned To :" + validateAssignedTo.value.length);
   console.log("Task Due Date :" + validateDueDate.value);
   console.log("Task Status:" + validateStatus.value);
+  
+// addTask method passing in your form's input
+  taskManager.addTask(
+      validateName.value,
+      validateDescription.value,
+      validateAssignedTo.value,
+      validateDueDate.value,
+      validateStatus.value
+    );
+    clearFormFields();
+*/
 
 // grab elements from html page by id
 const colToStart = document.getElementById("colToStart");
@@ -51,7 +62,7 @@ const colInProgress = document.getElementById("colInProgress");
 const colInReview = document.getElementById("colInReview");
 const colCompleted = document.getElementById("colCompleted");
 // Unable to complete step 2 "In index.js using the eventListener created for the form validation"
-*/
+
 
 // Continuously detect browser width (jQuery, imported in html page - line 193)
 var winWidth = $(window).width();
