@@ -7,7 +7,7 @@ Note: Make sure to prevent the default action of the form!
 4. Clear the values from each form input, ready for the next submission.
 */
 
-
+/*
 // Task 6- 1. Make sure a new TaskManager is initialized at the top of the file.
 const taskManager = new taskManager(0);
 // Select the New Task Form
@@ -54,6 +54,7 @@ form.addEventListener("submit", (event) => {
       validateStatus.value
     );
     clearFormFields();
+*/
 
 // grab elements from html page by id
 const colToStart = document.getElementById("colToStart");
