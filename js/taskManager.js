@@ -19,119 +19,6 @@ const completedArr = JSON.parse(localStorage.getItem("completedArr"))
   ? JSON.parse(localStorage.getItem("completedArr"))
   : [];
 
-/* 
-Task 7: Using Javascript to Create the Task HTML
-1. In js/taskManager.js, above the TaskManager class definition, create a new function, createTaskHtml. The function should accept the following parameters:(name, description, assignedTo, dueDate, status)
-2. Within this createTaskHtml function, create a string using template literals, copying across one of your tasks that we hardcoded in earlier in task 3 from the index.html
-3.Using the template literal placeholders (${}), replace each text section of the task HTML with the correct parameter
-4.Return the HTML from the function.
-*/
-
-/*
-//create a new function, createTaskHtml
-const createTaskHtml = (taskName, description, assignedTo, dueDate, status) => {
-// template literals placeholders (${}) & replace each text section of the task HTML with the correct parameter
-const html = `
-    <li class="card" style="min-width: 50vw">
-        <div class="card-body">
-            <h5 class="card-title">${taskName}</h5> 
-            <p class="card-text">
-                ${description}
-            </p>
-            <p class="card-text">${assignedTo} To</p>
-            <p class="card-text">${dueDate}</p>
-            <div class="card-footer row">
-                <div class="col-6">
-                    <p class="card-text"><b>${status}</b></p>
-                </div>
-                <div class="col-3">
-                    <button class="btn btn-outline-success done-button">
-                        Done
-                    </button>
-                </div>
-                <div class="col-3">
-                    <button class="btn btn-outline-danger delete-button">
-                        Delete
-                    </button>
-                </div>
-            </div>
-          </div>
-        </li>`;
-        return html;
-};
-//console.log(taskHTML)
-
-/*
-Task 5: initialize taskManager class
-Step 2: The TaskManager Class
-In this step, we'll create a TaskManager class that will be responsible for managing the tasks in the application.
-Create a TaskManager class in js/taskManager.js
-Within the constructor of the TaskManager class, initialize a this.tasks property on the class equal to an empty array.
-
-Task 6: Adding A New Task Programmatically
-Step 1: 
-1.In the TaskManager's constructor, accept a currentId parameter, with a default value of 0.
-2.Assign the currentId to a new property on the class, this.currentId.
-3.Create a method on the class, addTask. 
-4.Within the addTask method, increment the this.currentId
-5.push a new task into the this.tasks array, with the correct properties of the task, using the values passed in as parameters as well as the new this.currentId
-*/
-
-
-/*
-//codes for task 5 & 6
-class taskManager { //<--Task 5- Create a TaskManager class in js/taskManager.js
-  constructor(currentId = 0) { // <--Task 6- 1.In the TaskManager's constructor, accept a currentId parameter, with a default value of 0.
-    this.task = []; // <-- Task 5- Within the constructor of the TaskManager class, initialize a this.tasks property on the class equal to an empty array.
-    this.currentId = currentId; // <--Task 6- 2.Assign the currentId to a new property on the class, this.currentId.
-  }
-  addTask(taskName, description, assignedTo, dueDate, status){ //<--Task 6- Create a method on the class, addTask. 
-    const task = {
-      id: this.currentId++, //<--Task 6- Within the addTask method, increment the this.currentId.
-      taskName: taskName,
-      description: description,
-      assignedTo: assignedTo,
-      dueDate: dueDate,
-      status: status,
-    };
-    this.task.push({task});
-  } 
-  */
-
-  /*
-// In js/taskManager.js, within the TaskManager class, create a render() method. This method does not need any parameters
-render() {
-  //Create a variable tasksHtmlList and assign it an empty array
-  let tasksHtmlList = [];
-  // Loop over the TaskManager's tasks, and for each task
-  for (let i = 0; i < this.tasks.length; i++) {
-    // Get the current task in the loop
-    const task = this.tasks[i];
-    const date = new Date(task.dueDate);
-    // Create a formattedDate variable
-    const formattedDate =
-      date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
-    // Create a taskHtml variable to store the HTML of the current task
-    const taskHtml = createTaskHtml(
-      task.name,
-      task.description,
-      task.assignedTo,
-      formattedDate,
-      task.status
-    );
-    // push the taskHtml into the tasksHtmlList array
-    tasksHtmlList.push(taskHtml);
-  }
-  // Create the tasksHtml joining tasksHtmlList array
-  // seperate each task with a new line in between each item.
-  const tasksHtml = tasksHtmlList.join("\n");
-
-  // Select the tasks list element and set its innerHTML to the tasksHtml.
-  const tasksList = document.querySelector("#task-list");
-  tasksList.innerHTML = tasksHtml;
-}
-*/
-
 // initialize taskManager class
 // as the id is highly associated with the status of each card
 // means when a card move from one status into another, the id should be changed based on the new status array.
@@ -182,4 +69,294 @@ class taskManager {
   setId(newId) {
     this._id = newId;
   }
+  // function to add created card into local storage
+  addCardToLS(obj) {
+    // switch between created card's status then modify id separately and add to different local storage arrays.
+    switch (obj._status) {
+      case "toStart":
+        // set current card id === start array's length
+        this.setId(toStartArr.length);
+        // add current card information to start array
+        toStartArr.push(obj);
+        // update local storage - start array
+        localStorage.setItem("toStartArr", JSON.stringify(toStartArr));
+        console.log(toStartArr);
+        break;
+      case "inProgress":
+        this.setId(inProgressArr.length);
+        inProgressArr.push(obj);
+        localStorage.setItem("inProgressArr", JSON.stringify(inProgressArr));
+        console.log(inProgressArr);
+        break;
+      case "inReview":
+        this.setId(inReviewArr.length);
+        inReviewArr.push(obj);
+        localStorage.setItem("inReviewArr", JSON.stringify(inReviewArr));
+        console.log(inReviewArr);
+        break;
+      case "completed":
+        this.setId(completedArr.length);
+        completedArr.push(obj);
+        localStorage.setItem("completedArr", JSON.stringify(completedArr));
+        console.log(completedArr);
+        break;
+      default:
+        break;
+    }
+  }
+  // add card to associated columns
+  addCardToCol(obj) {
+    // create a div tage named card
+    const card = document.createElement("div");
+    // assign class="card" to this card div
+    card.className = "card";
+    // check the card we would add to columns based on its status
+    switch (obj._status) {
+      case "toStart":
+        document.getElementById("toStartContainer").appendChild(card);
+        break;
+      case "inProgress":
+        document.getElementById("inProgressContainer").appendChild(card);
+        break;
+      case "inReview":
+        document.getElementById("inReviewContainer").appendChild(card);
+        break;
+      case "completed":
+        document.getElementById("completedContainer").appendChild(card);
+        break;
+      default:
+        break;
+    }
+    // create content of this created div tag, passing parameters based on input values.
+    // bind a onClick function on delete button, which will be implemented later when considering delete card and its data from LS.
+    card.innerHTML = `
+      <div class="cardHeader">
+        <p id="taskName">${obj._name}</p>
+        <p id="taskDueDate">${obj._dueDate}</p>
+      </div>
+      <p id="taskDescription">${obj._description}</p>
+      <h6 class="card-subtitle mb-2 text-muted" id="assignedTo">
+        Assigned to: ${obj._assignedTo}
+      </h6>
+      <button type="button" class="btn btn-danger" onClick=deleteCard(${obj._id},"${obj._status}")>Delete</button>
+    `;
+  }
 }
+
+render();
+
+///////////////////////// Form Part /////////////////////////
+// grab elements from html page by id
+const taskName = document.getElementById("taskName");
+const taskNameValid = document.getElementById("taskNameValid");
+const taskNameRequired = document.getElementById("taskNameRequired");
+const assignedTo = document.getElementById("assignedTo");
+const assignedToValid = document.getElementById("assignedToValid");
+const assignedToRequired = document.getElementById("assignedToRequired");
+const description = document.getElementById("description");
+const dueDate = document.getElementById("dueDate");
+const dueDateValid = document.getElementById("dueDateValid");
+const dueDateRequired = document.getElementById("dueDateRequired");
+const status = document.getElementById("status");
+
+const createBtn = document.getElementById("createBtn");
+
+createBtn.addEventListener("click", () => {
+  // blocking previous three check validation functions outside.
+  taskNameCheck();
+
+  dueDateCheck();
+
+  assignedToCheck();
+
+  // if all three check validation functions return true - meaning all values are valid
+  if (
+    taskNameCheck() === true &&
+    dueDateCheck() === true &&
+    assignedToCheck() === true
+  ) {
+    // create object storing all relevant data that user typed in, through the taskManager class we created.
+    const cardObj = new taskManager(
+      taskName.value,
+      dueDate.value,
+      description.value,
+      assignedTo.value,
+      status.value
+    );
+    // call those two functions we declared in the taskManager class to add card into LS and display on the right column.
+    cardObj.addCardToLS(cardObj);
+    cardObj.addCardToCol(cardObj);
+    // call the clearInput function to clear all input areas once card been created / all data valid and create button toggle clicked.
+    clearInput();
+  }
+});
+
+// render function to recreate all cards based on each LS array, and display those cards on different columns
+function render() {
+  if (toStartArr) {
+    // grab each object from toStartArr, and pass it into the forEach loop, with its index number in the toStartArr
+    toStartArr.forEach((obj, index) => {
+      // create a temp object
+      const newObj = new taskManager(
+        obj._name,
+        obj._dueDate,
+        obj._description,
+        obj._assignedTo,
+        obj._status
+      );
+      // use the index to set as this temp object's id
+      newObj.setId(index);
+      // display this temp object onto the screen based on its status.
+      newObj.addCardToCol(newObj);
+    });
+  }
+  if (inProgressArr) {
+    inProgressArr.forEach((obj, index) => {
+      const newObj = new taskManager(
+        obj._name,
+        obj._dueDate,
+        obj._description,
+        obj._assignedTo,
+        obj._status
+      );
+      newObj.setId(index);
+      newObj.addCardToCol(newObj);
+    });
+  }
+  if (inReviewArr) {
+    inReviewArr.forEach((obj, index) => {
+      const newObj = new taskManager(
+        obj._name,
+        obj._dueDate,
+        obj._description,
+        obj._assignedTo,
+        obj._status
+      );
+      newObj.setId(index);
+      newObj.addCardToCol(newObj);
+    });
+  }
+  if (completedArr) {
+    completedArr.forEach((obj, index) => {
+      const newObj = new taskManager(
+        obj._name,
+        obj._dueDate,
+        obj._description,
+        obj._assignedTo,
+        obj._status
+      );
+      newObj.setId(index);
+      newObj.addCardToCol(newObj);
+    });
+  }
+}
+
+function taskNameCheck() {
+  // Task name validation check
+  // taskName.value.length will return the length of whatever user type in the taskName filed in the form.
+  // if this filed has valid length, then it will check if the length < 5
+  // if the length < 5 then the validation text will show, otherwise will not
+  if (taskName.value.length) {
+    // in this case there is valid taskName value, or at least user tried to type in the name
+    // the required text will not show.
+    taskNameRequired.style.display = "none";
+    if (taskName.value.length < 5) {
+      taskNameValid.style.display = "inline";
+      return false;
+    } else {
+      taskNameValid.style.display = "none";
+      return true;
+    }
+  } else {
+    // in this case there is not valid taskName value length, meaning user have not type in
+    // the required text will show.
+    taskNameRequired.style.display = "inline";
+    return false;
+  }
+}
+
+function dueDateCheck() {
+  // dueDate.value will return an array
+  // dueDate.value.slice(a, b) will return a new array, starting from index a, ending at index b
+  const dueDateYY = dueDate.value.slice(0, 4);
+  const dueDateMM = dueDate.value.slice(5, 7);
+  const dueDateDD = dueDate.value.slice(8, 10);
+  // Date().toISOString() is a built in function
+  const currentDateYY = new Date().toISOString().slice(0, 4);
+  const currentDateMM = new Date().toISOString().slice(5, 7);
+  const currentDateDD = new Date().toISOString().slice(8, 10);
+  // Task due date validation check
+  // check if dueDate value is valid, meanwhile dueDateYY, dueDateMM and dueDateDD are also valid
+  if (dueDate.value && dueDateYY && dueDateMM && dueDateDD) {
+    // if above check is true, then the required text will not show.
+    dueDateRequired.style.display = "none";
+    if (dueDateYY > currentDateYY) {
+      // if user chose a year that is the following year, for example
+      // means due date is available
+      // the dueDate validation text will not show.
+      dueDateValid.style.display = "none";
+      return true;
+    } else if (dueDateYY < currentDateYY) {
+      // otherwise the validation text will show.
+      dueDateValid.style.display = "inline";
+      return false;
+    } else {
+      // the pre-request is - the dueDate year is 2021 or later
+      if (dueDateMM > currentDateMM) {
+        // same logic to check month
+        dueDateValid.style.display = "none";
+        return true;
+      } else if (dueDateMM < currentDateMM) {
+        dueDateValid.style.display = "inline";
+        return false;
+      } else {
+        // the pre-request is - the dueDate year is 2021 or later
+        // and the dueDate month is June till Dec.
+        if (dueDateDD >= currentDateDD) {
+          // same logic to check day
+          dueDateValid.style.display = "none";
+          return true;
+        } else {
+          dueDateValid.style.display = "inline";
+          return false;
+        }
+      }
+    }
+  } else {
+    // if one of the first if statement is false, then means some date is missing
+    // required text will show.
+    dueDateRequired.style.display = "inline";
+    return false;
+  }
+}
+
+function assignedToCheck() {
+  if (assignedTo.value.length) {
+    assignedToRequired.style.display = "none";
+    if (assignedTo.value.length < 5) {
+      assignedToValid.style.display = "inline";
+      return false;
+    } else {
+      assignedToValid.style.display = "none";
+      return true;
+    }
+  } else {
+    assignedToRequired.style.display = "inline";
+    return false;
+  }
+}
+
+function clearInput() {
+  taskName.value = "";
+  description.value = "";
+  dueDate.value = "";
+  assignedTo.value = "";
+  status.value = "toStart";
+}
+// delete function will be impletemented later
+function deleteCard(id, status) {
+  console.log(id);
+  console.log(status);
+}
+
+////////////////////////////////////////////////////////////
