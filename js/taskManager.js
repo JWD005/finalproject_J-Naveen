@@ -54,7 +54,7 @@ const html = `
                     </button>
                 </div>
             </div>
-           </div>
+          </div>
         </li>`;
         return html;
 };
@@ -97,9 +97,37 @@ class taskManager { //<--Task 5- Create a TaskManager class in js/taskManager.js
   } 
   */
 
+// In js/taskManager.js, within the TaskManager class, create a render() method. This method does not need any parameters
+render() {
+  //Create a variable tasksHtmlList and assign it an empty array
+  let tasksHtmlList = [];
+  // Loop over the TaskManager's tasks, and for each task
+  for (let i = 0; i < this.tasks.length; i++) {
+    // Get the current task in the loop
+    const task = this.tasks[i];
+    const date = new Date(task.dueDate);
+    // Create a formattedDate variable
+    const formattedDate =
+      date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
+    // Create a taskHtml variable to store the HTML of the current task
+    const taskHtml = createTaskHtml(
+      task.name,
+      task.description,
+      task.assignedTo,
+      formattedDate,
+      task.status
+    );
+    // push the taskHtml into the tasksHtmlList array
+    tasksHtmlList.push(taskHtml);
+  }
+  // Create the tasksHtml joining tasksHtmlList array
+  // seperate each task with a new line in between each item.
+  const tasksHtml = tasksHtmlList.join("\n");
 
-
-
+  // Select the tasks list element and set its innerHTML to the tasksHtml.
+  const tasksList = document.querySelector("#task-list");
+  tasksList.innerHTML = tasksHtml;
+}
 
 // initialize taskManager class
 // as the id is highly associated with the status of each card
