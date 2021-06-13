@@ -19,8 +19,46 @@ const completedArr = JSON.parse(localStorage.getItem("completedArr"))
   ? JSON.parse(localStorage.getItem("completedArr"))
   : [];
 
+/* 
+Task 7: Using Javascript to Create the Task HTML
+1. In js/taskManager.js, above the TaskManager class definition, create a new function, createTaskHtml. The function should accept the following parameters:(name, description, assignedTo, dueDate, status)
+2. Within this createTaskHtml function, create a string using template literals, copying across one of your tasks that we hardcoded in earlier in task 3 from the index.html
+3.Using the template literal placeholders (${}), replace each text section of the task HTML with the correct parameter
+4.Return the HTML from the function.
+*/
 
-
+//create a new function, createTaskHtml
+const createTaskHtml = (taskName, description, assignedTo, dueDate, status) => {
+// template literals placeholders (${}) & replace each text section of the task HTML with the correct parameter
+const html = `
+    <li class="card" style="min-width: 50vw">
+        <div class="card-body">
+            <h5 class="card-title">${taskName}</h5> 
+            <p class="card-text">
+                ${description}
+            </p>
+            <p class="card-text">${assignedTo} To</p>
+            <p class="card-text">${dueDate}</p>
+            <div class="card-footer row">
+                <div class="col-6">
+                    <p class="card-text"><b>${status}</b></p>
+                </div>
+                <div class="col-3">
+                    <button class="btn btn-outline-success done-button">
+                        Done
+                    </button>
+                </div>
+                <div class="col-3">
+                    <button class="btn btn-outline-danger delete-button">
+                        Delete
+                    </button>
+                </div>
+            </div>
+           </div>
+        </li>`;
+        return html;
+};
+//console.log(taskHTML)
 
 /*
 Task 5: initialize taskManager class
