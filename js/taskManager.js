@@ -27,6 +27,7 @@ Task 7: Using Javascript to Create the Task HTML
 4.Return the HTML from the function.
 */
 
+/*
 //create a new function, createTaskHtml
 const createTaskHtml = (taskName, description, assignedTo, dueDate, status) => {
 // template literals placeholders (${}) & replace each text section of the task HTML with the correct parameter
@@ -97,6 +98,7 @@ class taskManager { //<--Task 5- Create a TaskManager class in js/taskManager.js
   } 
   */
 
+  /*
 // In js/taskManager.js, within the TaskManager class, create a render() method. This method does not need any parameters
 render() {
   //Create a variable tasksHtmlList and assign it an empty array
@@ -128,6 +130,7 @@ render() {
   const tasksList = document.querySelector("#task-list");
   tasksList.innerHTML = tasksHtml;
 }
+*/
 
 // initialize taskManager class
 // as the id is highly associated with the status of each card
