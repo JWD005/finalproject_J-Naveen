@@ -2,10 +2,12 @@
 // to store data into Local Storage, use
 // localStorage.setItem("nameOfItem", JSON.stringify(whatShouldBeStored))
 // to get data from Local Storage, use
-// JSON.parse(localStorage.getItem("nameOfItem"))
+// JSON.parse(localStorage.getItem("nameOfItem"))<-- task 9
 // in this case, initialize each array by checking if its already existed in our local storage
 // if it is - use the stored array
 // otherwise - set an empty array instead.
+// The JSON.parse() method parses a JSON string
+// Accessing JSON data here
 const toStartArr = JSON.parse(localStorage.getItem("toStartArr"))
   ? JSON.parse(localStorage.getItem("toStartArr"))
   : [];
@@ -19,7 +21,7 @@ const completedArr = JSON.parse(localStorage.getItem("completedArr"))
   ? JSON.parse(localStorage.getItem("completedArr"))
   : [];
 
-// initialize taskManager class
+// initialize taskManager "class taskManager()" constructor method
 // as the id is highly associated with the status of each card
 // means when a card move from one status into another, the id should be changed based on the new status array.
 class taskManager {
@@ -71,7 +73,7 @@ class taskManager {
   }
   // function to add created card into local storage
   addCardToLS(obj) {
-    // switch between created card's status then modify id separately and add to different local storage arrays.
+    // (conditional) switch between created card's status then modify id separately and add to different local storage arrays.
     switch (obj._status) {
       case "toStart":
         // set current card id === start array's length
@@ -142,10 +144,12 @@ class taskManager {
     `;
   }
 }
+// add done button within the createTaskHtml function, add a button to the task html to mark the task as done.
 
 render();
 
 ///////////////////////// Form Part /////////////////////////
+// from index.js
 // grab elements from html page by id
 const taskName = document.getElementById("taskName");
 const taskNameValid = document.getElementById("taskNameValid");
