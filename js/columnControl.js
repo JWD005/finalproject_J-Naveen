@@ -1,9 +1,9 @@
-// grab elements from html page by id
+// grab elements from html page by id- from columns
 const colToStart = document.getElementById("colToStart");
 const colInProgress = document.getElementById("colInProgress");
 const colInReview = document.getElementById("colInReview");
 const colCompleted = document.getElementById("colCompleted");
-// Unable to complete step 2 "In index.js using the eventListener created for the form validation"
+
 
 // Continuously detect browser width (jQuery, imported in html page - line 193)
 var winWidth = $(window).width();
