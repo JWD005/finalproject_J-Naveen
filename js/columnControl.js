@@ -79,3 +79,4 @@ colCompleted.addEventListener("mouseleave", () => {
   document.querySelector("#colCompleted > p").style.fontSize = "0.5rem";
   document.querySelector("#colCompleted > div").style.display = "none";
 });
+
