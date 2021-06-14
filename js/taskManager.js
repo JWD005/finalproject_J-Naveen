@@ -369,5 +369,4 @@ function deleteCard(id, status) {
   console.log(status);
 }
 
-////////////////////////////////////////////////////////////
->>>>>>> 25eee299fd874314beab80c1e23b228b663ce326
+
