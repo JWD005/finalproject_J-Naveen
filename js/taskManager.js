@@ -142,16 +142,6 @@ class taskManager {
     `;
   }
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-//last step- codes to be tested
-=======
-*/
->>>>>>> 0ecc6fc512c172a2d3d4a5fd31b864429570de7e
-=======
->>>>>>> 0d289f52cf975dd23378b248ff8b9df38bd5a55d
-=======
 
 render();
 
@@ -368,5 +358,3 @@ function deleteCard(id, status) {
   console.log(id);
   console.log(status);
 }
-
-
