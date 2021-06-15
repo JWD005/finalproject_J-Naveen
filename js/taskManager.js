@@ -144,7 +144,9 @@ class taskManager {
     `;
   }
 }
-// add done button within the createTaskHtml function, add a button to the task html to mark the task as done.
+//Done Button options:
+//<button class="btn btn-primary done-button" role="button" type="submit">Done</button>
+// <button class="btn btn-outline-success done-button" role="button" onClick=doneButton (${obj._id},"${obj._status}")>Done</button>
 
 render();
 
