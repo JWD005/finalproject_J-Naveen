@@ -45,37 +45,39 @@ function toggleToStartColOff() {
 // In Progress Column
 // when mouse enter this column, toggle toStart column as closed
 // resize the associated p tag and change div tag to be display-flex
-colInProgress.addEventListener("mouseenter", toggleToStartColOff);
 colInProgress.addEventListener("mouseenter", () => {
+  toggleToStartColOff();
   document.querySelector("#colInProgress > p").style.fontSize = "1.5rem";
   document.querySelector("#colInProgress > div").style.display = "flex";
 });
 // when mouse leave this column, toggle toStart column as open
 // resize the associated p tag and change div tag to be display-none
-colInProgress.addEventListener("mouseleave", toggleToStartColOpen);
 colInProgress.addEventListener("mouseleave", () => {
+  toggleToStartColOpen();
   document.querySelector("#colInProgress > p").style.fontSize = "0.5rem";
   document.querySelector("#colInProgress > div").style.display = "none";
 });
+
 // In Review Column
-colInReview.addEventListener("mouseenter", toggleToStartColOff);
 colInReview.addEventListener("mouseenter", () => {
+  toggleToStartColOff();
   document.querySelector("#colInReview > p").style.fontSize = "1.5rem";
   document.querySelector("#colInReview > div").style.display = "flex";
 });
-colInReview.addEventListener("mouseleave", toggleToStartColOpen);
 colInReview.addEventListener("mouseleave", () => {
+  toggleToStartColOpen();
   document.querySelector("#colInReview > p").style.fontSize = "0.5rem";
   document.querySelector("#colInReview > div").style.display = "none";
 });
+
 // Completed Column
-colCompleted.addEventListener("mouseenter", toggleToStartColOff);
 colCompleted.addEventListener("mouseenter", () => {
+  toggleToStartColOff();
   document.querySelector("#colCompleted > p").style.fontSize = "1.5rem";
   document.querySelector("#colCompleted > div").style.display = "flex";
 });
-colCompleted.addEventListener("mouseleave", toggleToStartColOpen);
 colCompleted.addEventListener("mouseleave", () => {
+  toggleToStartColOpen();
   document.querySelector("#colCompleted > p").style.fontSize = "0.5rem";
   document.querySelector("#colCompleted > div").style.display = "none";
 });
