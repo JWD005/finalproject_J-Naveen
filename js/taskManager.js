@@ -136,16 +136,16 @@ class taskManager {
         Assigned to: ${obj._assignedTo}
       </h6>
       <div>
-      <button type="button" class="btn btn-danger" onClick=deleteCard(${
-        obj._id
-      },"${obj._status}")>Delete</button>
-      ${
-        obj._status === "completed"
-          ? ``
-          : obj._status === "inReview"
-          ? `<button type="button" class="btn btn-secondary" id="doneBtn" onClick=done(${obj._id})>Done</button>`
-          : `<button type="button" class="btn btn-secondary" id="doneBtn" onClick=toNext(${obj._id},"${obj._status}")>to Next</button>`
-      }
+        <button type="button" class="btn btn-danger" onClick=deleteCard(${
+          obj._id
+        },"${obj._status}")>Delete</button>
+        ${
+          obj._status === "completed"
+            ? ``
+            : obj._status === "inReview"
+            ? `<button type="button" class="btn btn-secondary" id="doneBtn" onClick=done(${obj._id})>Done</button>`
+            : `<button type="button" class="btn btn-secondary" id="doneBtn" onClick=toNext(${obj._id},"${obj._status}")>to Next</button>`
+        }
       </div>
     `;
   }
