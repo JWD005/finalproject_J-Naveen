@@ -141,13 +141,12 @@ class taskManager {
         Assigned to: ${obj._assignedTo}
       </h6>
       <button type="button" class="btn btn-danger" onClick=deleteCard(${obj._id},"${obj._status}")>Delete</button>
-      <button class="btn btn-primary done-button" role="button" type="submit" onClick=doneButton (${obj._id},"${obj._status}">Done</button>
+      <button class="btn btn-primary done-btn" role="button" type="submit" onClick=doneButton (${obj._id},"${obj._status}">Done</button>
     `;
   }
 }
-//Done Button options:
-//<button class="btn btn-primary done-button" role="button" type="submit" onClick=doneButton (${obj._id},"${obj._status}">Done</button>
-// <button class="btn btn-outline-success done-button" role="button" onClick=doneButton (${obj._id},"${obj._status}")>Done</button>
+//Done Button added in line 144
+
 
 render();
 

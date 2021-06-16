@@ -210,15 +210,16 @@ main {
 }
 
 /*done button*/
-.done-button {
+.done-btn {
   transition: 0.5s;
   width: 70%;
   margin: auto;
 }
-
-.done-button:hover {
+.done-btn:hover {
   transform: scale(1.1);
 }
+/*done button ends*/
+
 /* footer section starts here */
 footer {
   text-align: center;
