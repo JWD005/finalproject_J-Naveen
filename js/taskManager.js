@@ -141,11 +141,11 @@ class taskManager {
         Assigned to: ${obj._assignedTo}
       </h6>
       <button type="button" class="btn btn-danger" onClick=deleteCard(${obj._id},"${obj._status}")>Delete</button>
-      
+      <button class="btn btn-primary done-btn" role="button" type="submit" onClick=updateCard(${obj._id},"${obj._status}")>Done</button>
     `;
   }
 }
-//Done Button added in line 144
+//Done Button added in line 144 Update task to done
 //<button class="btn btn-primary done-btn" role="button" type="submit">Done</button>
 
 

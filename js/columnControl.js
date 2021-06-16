@@ -82,7 +82,7 @@ colCompleted.addEventListener("mouseleave", () => {
 
 //Task 9
 //create a save method. This method doesn't require any parameters.
-/*save(){
+save(){
   //create a JSON string of the tasks using JSON.stringify() and store it to a new variable, tasksJson.
   const tasksJson = JSON.stringify(this.tasks);
   // Store the JSON string in localStorage
@@ -94,7 +94,7 @@ colCompleted.addEventListener("mouseleave", () => {
 }
 */
 
-/* already done ref to taskManager.js
+
 load() {
   // Check if any tasks are saved in localStorage
   if (localStorage.getItem("tasks")) {
