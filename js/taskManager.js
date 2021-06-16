@@ -80,25 +80,21 @@ class taskManager {
         toStartArr.push(obj);
         // update local storage - start array
         localStorage.setItem("toStartArr", JSON.stringify(toStartArr));
-        console.log(toStartArr);
         break;
       case "inProgress":
         this.setId(inProgressArr.length);
         inProgressArr.push(obj);
         localStorage.setItem("inProgressArr", JSON.stringify(inProgressArr));
-        console.log(inProgressArr);
         break;
       case "inReview":
         this.setId(inReviewArr.length);
         inReviewArr.push(obj);
         localStorage.setItem("inReviewArr", JSON.stringify(inReviewArr));
-        console.log(inReviewArr);
         break;
       case "completed":
         this.setId(completedArr.length);
         completedArr.push(obj);
         localStorage.setItem("completedArr", JSON.stringify(completedArr));
-        console.log(completedArr);
         break;
       default:
         break;
@@ -108,6 +104,7 @@ class taskManager {
   addCardToCol(obj) {
     // create a div tage named card
     const card = document.createElement("div");
+    const doneBtn = document.getElementById("doneBtn");
     // assign class="card" to this card div
     card.className = "card";
     // check the card we would add to columns based on its status
@@ -138,13 +135,24 @@ class taskManager {
       <h6 class="card-subtitle mb-2 text-muted" id="assignedTo">
         Assigned to: ${obj._assignedTo}
       </h6>
-      <button type="button" class="btn btn-danger" onClick=deleteCard(${obj._id},"${obj._status}")>Delete</button>
-      <button class="btn btn-primary done-btn" role="button" type="submit" onClick=doneButton (${obj._id},"${obj._status}">Done</button>
+      <div>
+        <button type="button" class="btn btn-danger" onClick=deleteCard(${
+          obj._id
+        },"${obj._status}")>Delete</button>
+        ${
+          obj._status === "completed"
+            ? ``
+            : obj._status === "inReview"
+            ? `<button type="button" class="btn btn-secondary" id="doneBtn" onClick=done(${obj._id})>Done</button>`
+            : `<button type="button" class="btn btn-secondary" id="doneBtn" onClick=toNext(${obj._id},"${obj._status}")>to Next</button>`
+        }
+      </div>
     `;
   }
 }
 
 render();
+updateLS();
 
 ///////////////////////// Form Part /////////////////////////
 // grab elements from html page by id
@@ -252,6 +260,103 @@ function render() {
   }
 }
 
+// simple function that will clear the input fields when a card is created successfully.
+function clearInput() {
+  taskName.value = "";
+  description.value = "";
+  dueDate.value = "";
+  assignedTo.value = "";
+  status.value = "toStart";
+}
+
+// function to delete a card when click the delete button
+function deleteCard(id, status) {
+  switch (status) {
+    case "toStart":
+      toStartArr.splice(id, 1); // delete specific element from toStartArr where id is the index
+      // run a forEach loop to reassign each object a new id based on its index number in toStartArr
+      toStartArr.forEach((obj) => {
+        obj.id = toStartArr.indexOf(obj);
+      });
+    case "inProgress":
+      inProgressArr.splice(id, 1);
+      inProgressArr.forEach((obj) => {
+        obj.id = inProgressArr.indexOf(obj);
+      });
+    case "inReview":
+      inReviewArr.splice(id, 1);
+      inReviewArr.forEach((obj) => {
+        obj.id = inReviewArr.indexOf(obj);
+      });
+    case "completed":
+      completedArr.splice(id, 1);
+      completedArr.forEach((obj) => {
+        obj.id = completedArr.indexOf(obj);
+      });
+    default:
+      break;
+  }
+  // once delete is done, update the local storage
+  updateLS();
+  // refresh the webpage to trigger render()
+  location.reload();
+}
+
+// done button function
+function done(id) {
+  const target = inReviewArr[id];
+  completedArr.push(target);
+  target._status = "completed";
+  target._id = completedArr.length - 1;
+  inReviewArr.splice(id, 1);
+  inReviewArr.forEach((obj) => {
+    obj._id = inReviewArr.indexOf(obj);
+  });
+  updateLS();
+  location.reload();
+}
+
+// move to next button function
+function toNext(id, status) {
+  let target;
+  switch (status) {
+    case "toStart":
+      target = toStartArr[id];
+      inProgressArr.push(target);
+      target._status = "inProgress";
+      target._id = inProgressArr.length - 1;
+      toStartArr.splice(id, 1);
+      toStartArr.forEach((obj) => {
+        obj._id = toStartArr.indexOf(obj);
+      });
+      break;
+    case "inProgress":
+      target = inProgressArr[id];
+      inReviewArr.push(target);
+      target._status = "inReview";
+      target._id = inReviewArr.length - 1;
+      inProgressArr.splice(id, 1);
+      inProgressArr.forEach((obj) => {
+        obj._id = inProgressArr.indexOf(obj);
+      });
+      break;
+    default:
+      break;
+  }
+  updateLS();
+  location.reload();
+}
+
+// simple function that will update each Local storage array
+function updateLS() {
+  localStorage.setItem("toStartArr", JSON.stringify(toStartArr));
+  localStorage.setItem("inProgressArr", JSON.stringify(inProgressArr));
+  localStorage.setItem("inReviewArr", JSON.stringify(inReviewArr));
+  localStorage.setItem("completedArr", JSON.stringify(completedArr));
+}
+
+////////////////////////////////////////////////////////////
+
 function taskNameCheck() {
   // Task name validation check
   // taskName.value.length will return the length of whatever user type in the taskName filed in the form.
@@ -346,18 +451,3 @@ function assignedToCheck() {
     return false;
   }
 }
-
-function clearInput() {
-  taskName.value = "";
-  description.value = "";
-  dueDate.value = "";
-  assignedTo.value = "";
-  status.value = "toStart";
-}
-// delete function will be impletemented later
-function deleteCard(id, status) {
-  console.log(id);
-  console.log(status);
-}
-
-////////////////////////////////////////////////////////////
