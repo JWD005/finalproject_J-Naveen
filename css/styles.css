@@ -239,6 +239,7 @@ footer p {
 @media screen and (max-width: 1200px) {
   .mainContainer {
     flex-direction: column;
+    width: 90vw;
   }
   .mainCol {
     width: 95vw;
