@@ -80,6 +80,7 @@ colCompleted.addEventListener("mouseleave", () => {
   document.querySelector("#colCompleted > div").style.display = "none";
 });
 
+/*
 //Task 9
 //create a save method. This method doesn't require any parameters.
 save(){
@@ -94,7 +95,7 @@ save(){
 }
 */
 
-
+/*
 load() {
   // Check if any tasks are saved in localStorage
   if (localStorage.getItem("tasks")) {
