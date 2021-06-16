@@ -4,7 +4,6 @@ const colInProgress = document.getElementById("colInProgress");
 const colInReview = document.getElementById("colInReview");
 const colCompleted = document.getElementById("colCompleted");
 
-
 // Continuously detect browser width (jQuery, imported in html page - line 193)
 var winWidth = $(window).width();
 $(window).resize(function () {
