@@ -12,5 +12,6 @@ Each Sprint will have a sprint retrospective in your Sprint Closing session at t
 At the end of the project, you and your group will do a final project presentation to the entire class.
 
 # Project
-
+<img src="modalForm.PNG" height = "500"/>
+<img src="task.PNG" height = "500"/>
 <img src="taskPlanner.PNG" height = "500"/>
