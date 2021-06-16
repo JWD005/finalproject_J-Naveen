@@ -355,8 +355,29 @@ function clearInput() {
 }
 // delete function will be impletemented later
 function deleteCard(id, status) {
-  console.log(id);
-  console.log(status);
+  switch (status) {
+    case "toStart":
+      toStartArr.splice(id, 1);
+      toStartArr.forEach((obj) => {
+        obj.id = toStartArr.indexOf(obj);
+      });
+      updateLS();
+    case "inProgress":
+
+    case "inReview":
+
+    case "completed":
+
+    default:
+      break;
+  }
+}
+
+function updateLS() {
+  localStorage.setItem("toStartArr", JSON.stringify(toStartArr));
+  localStorage.setItem("inProgressArr", JSON.stringify(inProgressArr));
+  localStorage.setItem("inReviewArr", JSON.stringify(inReviewArr));
+  localStorage.setItem("completedArr", JSON.stringify(completedArr));
 }
 
 ////////////////////////////////////////////////////////////
