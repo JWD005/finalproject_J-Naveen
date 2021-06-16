@@ -80,3 +80,39 @@ colCompleted.addEventListener("mouseleave", () => {
   document.querySelector("#colCompleted > div").style.display = "none";
 });
 
+//Task 9
+//create a save method. This method doesn't require any parameters.
+/*save(){
+  //create a JSON string of the tasks using JSON.stringify() and store it to a new variable, tasksJson.
+  const tasksJson = JSON.stringify(this.tasks);
+  // Store the JSON string in localStorage
+  localStorage.setItem("tasks", tasksJson);
+  // Convert the currentId to a string;
+  const currentId = String(this.currentId);
+  // Store the currentId in localStorage
+  localStorage.setItem("currentId", currentId);
+}
+*/
+
+/* already done ref to taskManager.js
+load() {
+  // Check if any tasks are saved in localStorage
+  if (localStorage.getItem("tasks")) {
+    // Get the JSON string of tasks in localStorage
+    const tasksJson = localStorage.getItem("tasks");
+
+    // Convert it to an array and store it in our TaskManager
+    this.tasks = JSON.parse(tasksJson);
+  }
+
+  // Check if the currentId is saved in localStorage
+  if (localStorage.getItem("currentId")) {
+    // Get the currentId string in localStorage
+    const currentId = localStorage.getItem("currentId");
+
+    // Convert the currentId to a number and store it in our TaskManager
+    this.currentId = Number(currentId);
+  }
+}
+}
+*/
