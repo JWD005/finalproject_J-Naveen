@@ -11,7 +11,10 @@ This project has 10 tasks (~3 hours each) divided into 3 Sprints.
 Each Sprint will have a sprint retrospective in your Sprint Closing session at the end following the Scrum methodology.
 At the end of the project, you and your group will do a final project presentation to the entire class.
 
-# Project
+# Completed Project
+[Click here for a live example](https://jwd005.github.io/finalproject_Naveen_JJ_Yiteng/)
 <img src="modalForm.PNG" height = "500"/>
 <img src="task.PNG" height = "500"/>
-<img src="taskPlanner.PNG" height = "500"/>
+<img src="1.PNG" height = "500"/>
+
+
