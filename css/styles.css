@@ -200,12 +200,18 @@ main {
 .cardHeader > p {
   cursor: default;
 }
-.btn-danger {
-  transition: 0.5s;
-  width: 70%;
-  margin: auto;
+.card > div:last-child {
+  display: flex;
+  justify-content: space-around;
 }
-.btn-danger:hover {
+.btn-danger,
+.btn-secondary {
+  transition: 0.5s;
+  margin: auto 1rem;
+  width: 80%;
+}
+.btn-danger:hover,
+.btn-secondary:hover {
   transform: scale(1.1);
 }
 
@@ -233,6 +239,7 @@ footer p {
 @media screen and (max-width: 1200px) {
   .mainContainer {
     flex-direction: column;
+    width: 90vw;
   }
   .mainCol {
     width: 95vw;
