@@ -70,30 +70,30 @@ class taskManager {
     this._id = newId;
   }
   // function to add created card into local storage
-  addCardToLS(obj) {
+  addCardToLS() {
     // switch between created card's status then modify id separately and add to different local storage arrays.
-    switch (obj._status) {
+    switch (this._status) {
       case "toStart":
         // set current card id === start array's length
         this.setId(toStartArr.length);
         // add current card information to start array
-        toStartArr.push(obj);
+        toStartArr.push(this);
         // update local storage - start array
         localStorage.setItem("toStartArr", JSON.stringify(toStartArr));
         break;
       case "inProgress":
         this.setId(inProgressArr.length);
-        inProgressArr.push(obj);
+        inProgressArr.push(this);
         localStorage.setItem("inProgressArr", JSON.stringify(inProgressArr));
         break;
       case "inReview":
         this.setId(inReviewArr.length);
-        inReviewArr.push(obj);
+        inReviewArr.push(this);
         localStorage.setItem("inReviewArr", JSON.stringify(inReviewArr));
         break;
       case "completed":
         this.setId(completedArr.length);
-        completedArr.push(obj);
+        completedArr.push(this);
         localStorage.setItem("completedArr", JSON.stringify(completedArr));
         break;
       default:
@@ -101,14 +101,13 @@ class taskManager {
     }
   }
   // add card to associated columns
-  addCardToCol(obj) {
+  addCardToCol() {
     // create a div tage named card
     const card = document.createElement("div");
-    const doneBtn = document.getElementById("doneBtn");
     // assign class="card" to this card div
     card.className = "card";
     // check the card we would add to columns based on its status
-    switch (obj._status) {
+    switch (this._status) {
       case "toStart":
         document.getElementById("toStartContainer").appendChild(card);
         break;
@@ -128,23 +127,23 @@ class taskManager {
     // bind a onClick function on delete button, which will be implemented later when considering delete card and its data from LS.
     card.innerHTML = `
       <div class="cardHeader">
-        <p id="taskName">${obj._name}</p>
-        <p id="taskDueDate">${obj._dueDate}</p>
+        <p id="taskName">${this._name}</p>
+        <p id="taskDueDate">${this._dueDate}</p>
       </div>
-      <p id="taskDescription">${obj._description}</p>
+      <p id="taskDescription">${this._description}</p>
       <h6 class="card-subtitle mb-2 text-muted" id="assignedTo">
-        Assigned to: ${obj._assignedTo}
+        Assigned to: ${this._assignedTo}
       </h6>
       <div>
         <button type="button" class="btn btn-danger" onClick=deleteCard(${
-          obj._id
-        },"${obj._status}")>Delete</button>
+          this._id
+        },"${this._status}")>Delete</button>
         ${
-          obj._status === "completed"
+          this._status === "completed"
             ? ``
-            : obj._status === "inReview"
-            ? `<button type="button" class="btn btn-secondary" id="doneBtn" onClick=done(${obj._id})>Done</button>`
-            : `<button type="button" class="btn btn-secondary" id="doneBtn" onClick=toNext(${obj._id},"${obj._status}")>to Next</button>`
+            : this._status === "inReview"
+            ? `<button type="button" class="btn btn-secondary" id="doneBtn" onClick=done(${this._id})>Done</button>`
+            : `<button type="button" class="btn btn-secondary" id="doneBtn" onClick=toNext(${this._id},"${this._status}")>to Next</button>`
         }
       </div>
     `;
@@ -167,7 +166,6 @@ const dueDate = document.getElementById("dueDate");
 const dueDateValid = document.getElementById("dueDateValid");
 const dueDateRequired = document.getElementById("dueDateRequired");
 const status = document.getElementById("status");
-
 const createBtn = document.getElementById("createBtn");
 
 createBtn.addEventListener("click", () => {
@@ -193,8 +191,8 @@ createBtn.addEventListener("click", () => {
       status.value
     );
     // call those two functions we declared in the taskManager class to add card into LS and display on the right column.
-    cardObj.addCardToLS(cardObj);
-    cardObj.addCardToCol(cardObj);
+    cardObj.addCardToLS();
+    cardObj.addCardToCol();
     // call the clearInput function to clear all input areas once card been created / all data valid and create button toggle clicked.
     clearInput();
   }
@@ -216,7 +214,7 @@ function render() {
       // use the index to set as this temp object's id
       newObj.setId(index);
       // display this temp object onto the screen based on its status.
-      newObj.addCardToCol(newObj);
+      newObj.addCardToCol();
     });
   }
   if (inProgressArr) {
@@ -229,7 +227,7 @@ function render() {
         obj._status
       );
       newObj.setId(index);
-      newObj.addCardToCol(newObj);
+      newObj.addCardToCol();
     });
   }
   if (inReviewArr) {
@@ -242,7 +240,7 @@ function render() {
         obj._status
       );
       newObj.setId(index);
-      newObj.addCardToCol(newObj);
+      newObj.addCardToCol();
     });
   }
   if (completedArr) {
@@ -255,7 +253,7 @@ function render() {
         obj._status
       );
       newObj.setId(index);
-      newObj.addCardToCol(newObj);
+      newObj.addCardToCol();
     });
   }
 }
