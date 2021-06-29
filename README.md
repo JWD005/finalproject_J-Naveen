@@ -2,7 +2,7 @@
 Jr Web Developer Final Project Cohort 5- Task Planner Web App
 
 # Team members
-Yiteng Huang, JJ Chang, Naveen Kotha
+Yiteng Huang, JJ Chang, Naveen Kotha.
 
 # General Objectives
 Create a Task Planner web app from scratch.
@@ -25,17 +25,17 @@ At the end of the project, the group will do a final project presentation to the
 - Task 10: Deleting Tasks
 
 # Front-end Language
-HTML
-CSS
+- HTML
+- CSS
 
 # Programming Language
-JavaScript
+- JavaScript
 
 # Framework
-Bootstrap
+- Bootstrap
 
 # Library
-Jquery
+- Jquery
 
 # Completed Project
 
@@ -45,11 +45,11 @@ Jquery
 <img src="./img/modalForm.PNG" height = "500"/>
 
 # validation 
-Task Form Inputs Validation.
+- Task Form Inputs Validation.
 
 <img src="./img/validation.PNG" height = "500"/>
 
 # columns
-Task card transitions to respective columns with each update from 'Start' to 'Complete'.
+- Task card transitions to respective columns with each update from 'Start' to 'Complete'.
 
 <img src="./img/1.PNG" height = "500"/>
