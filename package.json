@@ -1,0 +1,19 @@
+{
+  "name": "finalproject_j-naveen",
+  "version": "1.0.0",
+  "description": "Jr Web Developer Final Project Cohort 5- Task Planner Web App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JWD005/finalproject_J-Naveen.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JWD005/finalproject_J-Naveen/issues"
+  },
+  "homepage": "https://github.com/JWD005/finalproject_J-Naveen#readme"
+}
