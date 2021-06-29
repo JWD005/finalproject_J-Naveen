@@ -42,6 +42,7 @@ At the end of the project, the group will do a final project presentation to the
 [Click for live example](https://jwd005.github.io/finalproject_Naveen_JJ_Yiteng/)
 
 # modal form
+
 <img src="./img/modalForm.PNG" height = "500"/>
 
 # validation 
