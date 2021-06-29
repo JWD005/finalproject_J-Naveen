@@ -24,11 +24,9 @@ At the end of the project, the group will do a final project presentation to the
 - Task 9: Persisting Tasks to LocalStorage
 - Task 10: Deleting Tasks
 
-# Front-end Language
+# Front-end Languages
 - HTML
 - CSS
-
-# Programming Language
 - JavaScript
 
 # Framework
