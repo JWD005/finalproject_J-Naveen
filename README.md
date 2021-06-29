@@ -2,9 +2,7 @@
 Jr Web Developer Final Project Cohort 5- Task Planner Web App
 
 # Team members
-Yiteng Huang
-JJ Chang
-Naveen Kotha
+Yiteng Huang, JJ Chang, Naveen Kotha
 
 # General Objectives
 Create a Task Planner web app from scratch.
@@ -15,16 +13,16 @@ This project has 10 tasks (~3 hours each) divided into 3 Sprints.
 Each Sprint will have a sprint retrospective in your Sprint Closing session at the end following the Scrum methodology.
 At the end of the project, the group will do a final project presentation to the entire class.
 
-Task 1: Design your App Wireframes
-Task 2: Implement your Wireframes using Bootstrap
-Task 3: Create a Task Card layout and a Task List component
-Task 4: Task Form Inputs Validation
-Task 5: Adding Tasks
-Task 6: Adding Tasks Programmatically
-Task 7: Display The Tasks
-Task 8: Update A Task
-Task 9: Persisting Tasks to LocalStorage
-Task 10: Deleting Tasks
+- Task 1: Design your App Wireframes
+- Task 2: Implement your Wireframes using Bootstrap
+- Task 3: Create a Task Card layout and a Task List component
+- Task 4: Task Form Inputs Validation
+- Task 5: Adding Tasks
+- Task 6: Adding Tasks Programmatically
+- Task 7: Display The Tasks
+- Task 8: Update A Task
+- Task 9: Persisting Tasks to LocalStorage
+- Task 10: Deleting Tasks
 
 # Front-end Language
 HTML
